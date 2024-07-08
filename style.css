@@ -1,0 +1,334 @@
+:root {
+    --color-primary: #aaa
+}
+
+.cv-container {
+    font-size: 14px;
+    font-family: system-ui, sans-serif;
+    max-width: 800px;
+    /* Adjust max-width to suit your layout */
+    margin: 0 auto;
+    /* Center the container horizontally */
+    border: 1px solid #ccc;
+    /* Add a border around the container */
+    padding: 20px;
+    /* Add padding inside the border */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* Optional: Add a subtle shadow */
+}
+
+.cv-container .cv-container footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-top: 3em;
+    border-top: 1px solid #ccc;
+    padding: 4px 0 8px;
+    display: flex;
+    justify-content: center;
+    /* Center align items horizontally */
+    font-size: 13px;
+    color: #999;
+}
+
+.cv-container footer>div {
+    margin-right: 2em;
+}
+
+a,
+a:visited,
+a:active {
+    color: var(--color-primary);
+    text-decoration: none
+}
+
+a:hover {
+    color: var(--color-primary);
+    text-decoration: underline
+}
+
+section .section-title {
+    margin-top: 3em;
+    display: flex
+}
+
+section .section-title h2 {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin: 0
+}
+
+section .section-title .line {
+    flex-grow: 1;
+    margin: 14px 0 0 1em;
+    height: 2px;
+    background-color: var(--color-primary)
+}
+
+section .section-item {
+    margin-top: 2em
+}
+
+section .section-item h3 {
+    font-size: 18px;
+    line-height: 1.4;
+    margin: 0
+}
+
+section .section-item ul {
+    margin: .8em 0;
+    padding-left: 16px
+}
+
+section .section-item ul li {
+    margin-bottom: .4em
+}
+
+section svg {
+    vertical-align: bottom;
+    position: relative;
+    bottom: 1px
+}
+
+section .row {
+    margin: .4em 0
+}
+
+section .p,
+section p {
+    line-height: 1.4;
+    margin: .8em 0
+}
+
+section .subtitle {
+    font-size: 16px
+}
+
+@media screen and (max-width: 500px) {
+    section .subtitle {
+        display: flex;
+        align-items: center
+    }
+}
+
+section .space-between {
+    display: flex;
+    justify-content: space-between
+}
+
+section .space-between a {
+    color: #777
+}
+
+section .keywords {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 8px;
+    margin-top: .8em
+}
+
+section .keywords .item {
+    font-size: 13px;
+    color: #555;
+    padding: 0 4px;
+    height: 22px;
+    line-height: 21px;
+    background: #f1f1f1
+}
+
+section .two-columns {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 1.5em
+}
+
+@media screen and (max-width: 500px) {
+    section .two-columns {
+        grid-template-columns: 1fr
+    }
+}
+
+section ._fz-4 {
+    font-size: 16px
+}
+
+section ._ul {
+    text-decoration: underline
+}
+
+section ._text-dim {
+    color: #777
+}
+
+@media print {
+    section .section-title {
+        margin-top: 2.7em
+    }
+
+    section .section-item {
+        margin-top: 1.8em
+    }
+}
+
+.basics-section h1 {
+    font-size: 36px;
+    font-weight: 600;
+    margin: .2em 0
+}
+
+.basics-section .contact {
+    color: #777;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4em 1em
+}
+
+@media screen and (max-width: 500px) {
+    .basics-section .contact {
+        flex-direction: column
+    }
+}
+
+.basics-section .contact .item a {
+    color: #777
+}
+
+@media screen and (max-width: 700px) {
+    .education-section .space-between:nth-of-type(2) {
+        flex-wrap: wrap;
+        gap: .4em
+    }
+
+    .education-section .study {
+        width: 100%
+    }
+}
+
+.work-section .section-item {
+    break-inside: auto;
+}
+
+@media screen and (max-width: 500px) {
+    .projects-section .space-between {
+        flex-wrap: wrap
+    }
+}
+
+.certification-section .description p:last-of-type {
+    margin-bottom: 0
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    /* Adjust padding as needed */
+}
+
+.footer-content {
+    display: inline-block;
+    /* Ensures that content aligns center */
+}
+
+.footer-button {
+    align-self: center;
+    background-color: transparent;
+    background-image: none;
+    background-position: 0 90%;
+    background-repeat: repeat no-repeat;
+    background-size: 4px 3px;
+    border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #a91cbe;
+    box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
+    box-sizing: border-box;
+    color: #a91cbe;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Neucha, sans-serif;
+    font-size: 1rem;
+    line-height: 23px;
+    outline: none;
+    padding: .75rem;
+    text-decoration: none;
+    transition: all 235ms ease-in-out;
+    border-bottom-left-radius: 15px 255px;
+    border-bottom-right-radius: 225px 15px;
+    border-top-left-radius: 255px 15px;
+    border-top-right-radius: 15px 225px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.footer-button:hover {
+    box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+    transform: translate3d(0, 2px, 0);
+}
+
+.footer-button:focus {
+    box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+}
+
+.certification-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    /* Set a fixed height for the image container */
+    margin: 10px 0;
+}
+
+.certification-image img {
+    max-width: 40%;
+    max-height: 100%;
+    height: auto;
+    display: block;
+}
+
+.center-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.page-break {
+    page-break-before: always;
+    padding-top: 7px;
+}
+
+@media print {
+    footer.footer .footer-content .footer-button {
+        display: none !important;
+    }
+}
+.button-end {
+    display: inline-flex;
+    align-items: center;
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    color: inherit;
+    margin-right: 10px; /* Adjust margin as needed */
+  }
+  
+  .button-end svg {
+    width: 1em;
+    height: 1em;
+    margin-right: 0.5em;
+  }
+  
+  .button-end:hover {
+    text-decoration: underline;
+    color: #a91cbe;
+  }
+  
+  .url.row.end {
+    display: flex;
+    justify-content: center; /* Center items horizontally */
+  }  

@@ -1,0 +1,30 @@
+@page {
+    size: A4;
+  }
+
+  .cv-container {
+    width: 190mm;
+
+    
+
+  @media print {
+    .cv-container {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      width: auto
+    }
+  }
+
+  html {
+    margin: 0;
+    padding: 0
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact
+  }
