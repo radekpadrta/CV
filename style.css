@@ -1,28 +1,72 @@
 :root {
-    --color-primary: #e11bff; /* Default primary color */
-    --color-background-light: #fff; /* Light background color */
-    --color-text-light: #333; /* Light text color */
-    --color-background-dark: #333; /* Dark background color */
-    --color-text-dark: #fff; /* Dark text color */
-  }
+    --color-primary: #e11bff;
+    /* Default primary color */
+    --color-background-light: #fff;
+    /* Light background color */
+    --color-text-light: #333;
+    /* Light text color */
+    --color-background-dark: #333;
+    /* Dark background color */
+    --color-text-dark: #dbdbdb;
+    /* Dark text color */
+    --box-shadow-light: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* Light theme shadow */
+    --box-shadow-dark: 0 0 10px rgba(255, 255, 255, 0.5);
+    /* Dark theme shadow */
+    --border-color-light: #ccc;
+    /* Light theme border color */
+    --border-color-dark: #fff;
+    /* Dark theme border color */
+}
+
+.theme-container {
+    --color-background: var(--color-background-light);
+    --color-text: var(--color-text-light);
+    --box-shadow: var(--box-shadow-light);
+    --border-color: var(--border-color-light);
+    background-color: var(--color-background);
+    color: var(--color-text);
+    transition: all 0.3s ease;
+}
+
+.theme-container.dark-theme {
+    --color-background: var(--color-background-dark);
+    --color-text: var(--color-text-dark);
+    --box-shadow: var(--box-shadow-dark);
+    --border-color: var(--border-color-dark);
+}
 
 .cv-container {
     font-size: 14px;
     font-family: system-ui, sans-serif;
     max-width: 800px;
-    /* Adjust max-width to suit your layout */
     margin: 0 auto;
-    /* Center the container horizontally */
-    border: 1px solid #ccc;
-    /* Add a border around the container */
+    border: 1px solid var(--border-color);
     padding: 20px;
-    /* Add padding inside the border */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    /* Optional: Add a subtle shadow */
+    box-shadow: var(--box-shadow);
     @media only screen and (max-width: 600px) {
-        border: none; /* Remove border */
+        border: none;
     }
+}
 
+.theme-switcher {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+#sun {
+    display: none;
+}
+
+.theme-container.dark-theme #sun {
+    display: inline;
+    stroke: var(--color-text-dark);
+}
+
+.theme-container.dark-theme #moon {
+    display: none;
 }
 
 .cv-container .cv-container footer {
@@ -38,6 +82,7 @@
     /* Center align items horizontally */
     font-size: 13px;
     color: #999;
+    background-color: var(--background-color)
 }
 
 .cv-container footer>div {
@@ -314,6 +359,7 @@ section ._text-dim {
         display: none !important;
     }
 }
+
 .button-end {
     display: inline-flex;
     align-items: center;
@@ -323,34 +369,37 @@ section ._text-dim {
     font: inherit;
     cursor: pointer;
     color: inherit;
-    margin-right: 10px; /* Adjust margin as needed */
-  }
-  
-  .button-end svg {
+    margin-right: 10px;
+    /* Adjust margin as needed */
+}
+
+.button-end svg {
     width: 1em;
     height: 1em;
     margin-right: 0.5em;
-  }
-  
-  .button-end:hover {
+}
+
+.button-end:hover {
     text-decoration: underline;
     color: #a91cbe;
-  }
-  
-  .url.row.end {
-    display: flex;
-    justify-content: center; /* Center items horizontally */
-  }  
+}
 
-  .summary.p {
-    font-size: 14px; /* Adjust as needed */
+.url.row.end {
+    display: flex;
+    justify-content: center;
+    /* Center items horizontally */
+}
+
+.summary.p {
+    font-size: 14px;
+    /* Adjust as needed */
     font-family: Arial, Helvetica, sans-serif;
 
-  }
+}
 
 
-  @media only screen and (max-width: 600px) {
+@media only screen and (max-width: 600px) {
     .footer {
         display: none;
     }
-} 
+}

@@ -1,11 +1,11 @@
 @page {
-    size: A4;
-  }
+  size: A4;
+}
 
-  .cv-container {
-    width: 190mm;
+.cv-container {
+  width: 190mm;
 
-    
+
 
   @media print {
     .cv-container {
@@ -26,5 +26,12 @@
     padding: 0;
     border: 0;
     print-color-adjust: exact;
-    -webkit-print-color-adjust: exact
+    -webkit-print-color-adjust: exact --color-background: var(--color-background-light);
+    --color-text: var(--color-text-light);
+  }
+
+
+  body.dark-theme {
+    --color-background: var(--color-background-dark);
+    --color-text: var(--color-text-dark);
   }
