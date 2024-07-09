@@ -1,6 +1,10 @@
 :root {
-    --color-primary: #aaa
-}
+    --color-primary: #e11bff; /* Default primary color */
+    --color-background-light: #fff; /* Light background color */
+    --color-text-light: #333; /* Light text color */
+    --color-background-dark: #333; /* Dark background color */
+    --color-text-dark: #fff; /* Dark text color */
+  }
 
 .cv-container {
     font-size: 14px;
