@@ -303,7 +303,7 @@ section ._text-dim {
 @media only screen and (max-width: 600px) {
     /* Mobile-specific style for page break */
     .page-break-phone {
-        page-break-before: auto; /* or avoid, depending on your needs */
+        page-break-before: always; /* or avoid, depending on your needs */
         padding-top: 3px; /* Adjust padding for smaller devices */
     }
 }
