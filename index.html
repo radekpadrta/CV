@@ -380,35 +380,35 @@
       var element = document.getElementById('cv-container');
       var button = document.querySelector('.footer-button');
       var urlRowEnd = document.querySelector('.url.row.end');
-
+  
       // Capture original styles
       var urlRowEndDisplayStyle = urlRowEnd ? urlRowEnd.style.display : null;
       var urlRowEndJustifyContent = urlRowEnd ? urlRowEnd.style.justifyContent : null;
-
+  
       // Hide the button and border
       button.style.display = 'none';
       element.style.border = 'none';
-
+  
       // Hide the .url.row.end section if it exists
       if (urlRowEnd) {
         urlRowEnd.style.display = 'none';
       }
-
+  
       // Define the options for html2pdf
       var opt = {
         margin: 0,
         filename: 'RadekPadrtaCV.pdf',
         image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 2 },
+        html2canvas: { scale: 1 }, // Adjusted scale for better mobile compatibility
         jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
       };
-
+  
       // Generate the PDF
       html2pdf().set(opt).from(element).save().then(function () {
         // Show the button and restore the border
         button.style.display = 'block';
         element.style.border = '1px solid #ccc'; // Restore the border
-
+  
         // Restore the .url.row.end section to original styles
         if (urlRowEnd) {
           urlRowEnd.style.display = urlRowEndDisplayStyle; // Restore display property
@@ -417,6 +417,7 @@
       });
     }
   </script>
+  
 
 
 

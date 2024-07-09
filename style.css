@@ -334,8 +334,7 @@ section ._text-dim {
   }  
 
   .summary.p {
-    font-size: 15px; /* Adjust as needed */
+    font-size: 14px; /* Adjust as needed */
     font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.6;
 
   }
