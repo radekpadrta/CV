@@ -345,44 +345,52 @@
     </section>
     <footer class="footer">
       <div class="footer-content">
-        <button class="footer-button" onclick="downloadPDF()">Download in PDF</button>
+        <button class="footer-button" onclick="downloadPDF()">Download PDF</button>
       </div>
     </footer>
 
     <div class="url row end">
       <button class="button-end" onclick="window.open('https://www.linkedin.com/in/radekpadrta/', '_blank')">
         <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
-          <path fill="currentColor" d="M22.23 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.21 0 22.23 0zM7.08 20.45H3.56V9h3.52v11.45zm-1.76-13c-1.14 0-2.07-.93-2.07-2.07s.93-2.07 2.07-2.07 2.07.93 2.07 2.07-.93 2.07-2.07 2.07zM20.45 20.45h-3.52v-5.85c0-1.4-.03-3.21-1.96-3.21-1.97 0-2.27 1.54-2.27 3.11v5.95h-3.52V9h3.38v1.56h.05c.47-.9 1.62-1.85 3.33-1.85 3.57 0 4.23 2.35 4.23 5.41v6.33z" />
+          <path fill="currentColor"
+            d="M22.23 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.21 0 22.23 0zM7.08 20.45H3.56V9h3.52v11.45zm-1.76-13c-1.14 0-2.07-.93-2.07-2.07s.93-2.07 2.07-2.07 2.07.93 2.07 2.07-.93 2.07-2.07 2.07zM20.45 20.45h-3.52v-5.85c0-1.4-.03-3.21-1.96-3.21-1.97 0-2.27 1.54-2.27 3.11v5.95h-3.52V9h3.38v1.56h.05c.47-.9 1.62-1.85 3.33-1.85 3.57 0 4.23 2.35 4.23 5.41v6.33z" />
         </svg>
         /radekpadrta
       </button>
-    
+
       <button class="button-end" onclick="window.open('http://www.radekpadrta.cz', '_blank')">
-        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1em" height="1em" viewBox="0 0 24 24">
-          <path fill="currentColor" d="M10.59 13.41c.41.39.41 1.03 0 1.42c-.39.39-1.03.39-1.42 0a5.003 5.003 0 0 1 0-7.07l3.54-3.54a5.003 5.003 0 0 1 7.07 0a5.003 5.003 0 0 1 0 7.07l-1.49 1.49c.01-.82-.12-1.64-.4-2.42l.47-.48a2.982 2.982 0 0 0 0-4.24a2.982 2.982 0 0 0-4.24 0l-3.53 3.53a2.982 2.982 0 0 0 0 4.24m2.82-4.24c.39-.39 1.03-.39 1.42 0a5.003 5.003 0 0 1 0 7.07l-3.54 3.54a5.003 5.003 0 0 1-7.07 0a5.003 5.003 0 0 1 0-7.07l1.49-1.49c-.01.82.12 1.64.4 2.43l-.47.47a2.982 2.982 0 0 0 0 4.24a2.982 2.982 0 0 0 4.24 0l3.53-3.53a2.982 2.982 0 0 0 0-4.24a.973.973 0 0 1 0-1.42Z"></path>
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1em" height="1em"
+          viewBox="0 0 24 24">
+          <path fill="currentColor"
+            d="M10.59 13.41c.41.39.41 1.03 0 1.42c-.39.39-1.03.39-1.42 0a5.003 5.003 0 0 1 0-7.07l3.54-3.54a5.003 5.003 0 0 1 7.07 0a5.003 5.003 0 0 1 0 7.07l-1.49 1.49c.01-.82-.12-1.64-.4-2.42l.47-.48a2.982 2.982 0 0 0 0-4.24a2.982 2.982 0 0 0-4.24 0l-3.53 3.53a2.982 2.982 0 0 0 0 4.24m2.82-4.24c.39-.39 1.03-.39 1.42 0a5.003 5.003 0 0 1 0 7.07l-3.54 3.54a5.003 5.003 0 0 1-7.07 0a5.003 5.003 0 0 1 0-7.07l1.49-1.49c-.01.82.12 1.64.4 2.43l-.47.47a2.982 2.982 0 0 0 0 4.24a2.982 2.982 0 0 0 4.24 0l3.53-3.53a2.982 2.982 0 0 0 0-4.24a.973.973 0 0 1 0-1.42Z">
+          </path>
         </svg>
         www.radekpadrta.cz
       </button>
     </div>
-    
+
   </div>
 
-  
+
   <script>
     function downloadPDF() {
       var element = document.getElementById('cv-container');
       var button = document.querySelector('.footer-button');
       var urlRowEnd = document.querySelector('.url.row.end');
-  
+
+      // Capture original styles
+      var urlRowEndDisplayStyle = urlRowEnd ? urlRowEnd.style.display : null;
+      var urlRowEndJustifyContent = urlRowEnd ? urlRowEnd.style.justifyContent : null;
+
       // Hide the button and border
       button.style.display = 'none';
       element.style.border = 'none';
-  
+
       // Hide the .url.row.end section if it exists
       if (urlRowEnd) {
         urlRowEnd.style.display = 'none';
       }
-  
+
       // Define the options for html2pdf
       var opt = {
         margin: 0,
@@ -391,22 +399,24 @@
         html2canvas: { scale: 2 },
         jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
       };
-  
+
       // Generate the PDF
-      html2pdf().set(opt).from(element).save().then(function() {
+      html2pdf().set(opt).from(element).save().then(function () {
         // Show the button and restore the border
         button.style.display = 'block';
         element.style.border = '1px solid #ccc'; // Restore the border
-  
-        // Show the .url.row.end section if it was hidden
+
+        // Restore the .url.row.end section to original styles
         if (urlRowEnd) {
-          urlRowEnd.style.display = 'block'; // or 'flex' based on its original display type
+          urlRowEnd.style.display = urlRowEndDisplayStyle; // Restore display property
+          urlRowEnd.style.justifyContent = urlRowEndJustifyContent; // Restore justify-content property
         }
       });
     }
   </script>
-  
-  
+
+
+
 
 
 </body>
