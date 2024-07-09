@@ -19,34 +19,62 @@
     /* Dark theme border color */
 }
 
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body {
+    background-color: var(--color-background-light);
+    color: var(--color-text-light);
+}
+
+body.dark-theme {
+    background-color: var(--color-background-dark);
+    color: var(--color-text-dark);
+}
+
 .theme-container {
-    --color-background: var(--color-background-light);
-    --color-text: var(--color-text-light);
-    --box-shadow: var(--box-shadow-light);
-    --border-color: var(--border-color-light);
-    background-color: var(--color-background);
-    color: var(--color-text);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    background-color: var(--color-background-light);
+    color: var(--color-text-light);
     transition: all 0.3s ease;
 }
 
-.theme-container.dark-theme {
-    --color-background: var(--color-background-dark);
-    --color-text: var(--color-text-dark);
-    --box-shadow: var(--box-shadow-dark);
-    --border-color: var(--border-color-dark);
+body.dark-theme .theme-container {
+    background-color: var(--color-background-dark);
+    color: var(--color-text-dark);
+}
+
+.theme-container .content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 .cv-container {
     font-size: 14px;
     font-family: system-ui, sans-serif;
+    width: 100%;
     max-width: 800px;
-    margin: 0 auto;
-    border: 1px solid var(--border-color);
+    margin: 20px;
+    border: 1px solid var(--border-color-light);
     padding: 20px;
-    box-shadow: var(--box-shadow);
-    @media only screen and (max-width: 600px) {
-        border: none;
-    }
+    box-shadow: var(--box-shadow-light);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.dark-theme .cv-container {
+    border-color: var(--border-color-dark);
+    box-shadow: var(--box-shadow-dark);
 }
 
 .theme-switcher {
@@ -54,18 +82,19 @@
     top: 20px;
     right: 20px;
     cursor: pointer;
+    z-index: 1000; /* Ensure it is on top of other elements */
 }
 
 #sun {
     display: none;
 }
 
-.theme-container.dark-theme #sun {
+body.dark-theme #sun {
     display: inline;
     stroke: var(--color-text-dark);
 }
 
-.theme-container.dark-theme #moon {
+body.dark-theme #moon {
     display: none;
 }
 
