@@ -300,12 +300,6 @@ section ._text-dim {
     padding-top: 7px;
 }
 
-@media print and (max-width: 600px) {
-    .page-break-phone {
-        page-break-before: always; /* nebo avoid, podle potřeby */
-        padding-top: 15px; /* upravit polštářek pro menší zařízení */
-    }
-}
 
 @media print {
     footer.footer .footer-content .footer-button {
@@ -345,3 +339,10 @@ section ._text-dim {
     font-family: Arial, Helvetica, sans-serif;
 
   }
+
+
+  @media only screen and (max-width: 600px) {
+    .footer {
+        display: none;
+    }
+} 
