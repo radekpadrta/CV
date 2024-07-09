@@ -97,22 +97,22 @@
           <div class="date-range">May 2024 – Now</div>
         </div>
         <div class="highlights row">
-          <div class="summary p">
-            <ul>
-              <li>Developed and implemented an orchestration service for AI builds utilizing Machine Learning workspace,
-                enhancing automation and efficiency in AI model deployment</li>
-              <li>Managed and optimized AI solution hosting on various endpoints, ensuring high availability and
-                performance</li>
-              <li>Played a key role in delivering AI solutions, taking responsibility for implementation and maintenance
-              </li>
-              <li>Presented AI solutions and cloud implementations at the Mambo Jambo event</li>
-            </ul>
+          <div class="summary p">  
+          <ul>
+            <li>Developed and implemented an orchestration service for AI builds utilizing Machine Learning workspace,
+              enhancing automation and efficiency in AI model deployment</li>
+            <li>Managed and optimized AI solution hosting on various endpoints, ensuring high availability and
+              performance</li>
+            <li>Played a key role in delivering AI solutions, taking responsibility for implementation and maintenance
+            </li>
+            <li>Presented AI solutions and cloud implementations at the Mambo Jambo event</li>
+          </ul>
           </div>
         </div>
       </div>
 
       <div class="work section-item">
-        <div class="row space-between">
+        <div class="row space-between .page-break-phone">
           <h3>Deloitte</h3>
         </div>
         <div class="row space-between">
@@ -194,7 +194,7 @@
 
     <!-- Skills -->
 
-    <section class="skills-section">
+    <section class="skills-section .page-break-phone">
       <div class="section-title">
         <h2>Skills</h2>
         <div class="line"></div>
@@ -237,8 +237,7 @@
           <div class="summary p">
             <p>Experienced in DevOps practices and tools, including infrastructure as code, continuous
               integration/continuous deployment (CI/CD), automation, version control, containerization, and working
-              across multiple operating systems.</p>
-            <p> Proficient in using both cloud-specific and general-purpose DevOps
+              across multiple operating systems.</p> <p> Proficient in using both cloud-specific and general-purpose DevOps
               tools and technologies.</p>
           </div>
 
@@ -377,58 +376,58 @@
 
 
   <script>
-    function downloadPDF() {
-      var element = document.getElementById('cv-container');
-      var button = document.querySelector('.footer-button');
-      var urlRowEnd = document.querySelector('.url.row.end');
+   function downloadPDF() {
+  var element = document.getElementById('cv-container');
+  var button = document.querySelector('.footer-button');
+  var urlRowEnd = document.querySelector('.url.row.end');
 
-      // Capture original styles
-      var urlRowEndDisplayStyle = urlRowEnd ? urlRowEnd.style.display : null;
-      var urlRowEndJustifyContent = urlRowEnd ? urlRowEnd.style.justifyContent : null;
+  // Capture original styles
+  var urlRowEndDisplayStyle = urlRowEnd ? urlRowEnd.style.display : null;
+  var urlRowEndJustifyContent = urlRowEnd ? urlRowEnd.style.justifyContent : null;
 
-      // Hide the button and border
-      button.style.display = 'none';
-      element.style.border = 'none';
+  // Hide the button and border
+  button.style.display = 'none';
+  element.style.border = 'none';
 
-      // Hide the .url.row.end section if it exists
-      if (urlRowEnd) {
-        urlRowEnd.style.display = 'none';
-      }
+  // Hide the .url.row.end section if it exists
+  if (urlRowEnd) {
+    urlRowEnd.style.display = 'none';
+  }
 
-      // Define page size and scale based on device width
-      var pageSize = 'A4'; // Default page size for desktop
-      var scale = 1; // Default scale for desktop
+  // Define page size and scale based on device width
+  var pageSize = 'A4'; // Default page size for desktop
+  var scale = 1; // Default scale for desktop
 
-      // Check if the screen width is less than a certain threshold (e.g., 768px for tablets)
-      if (window.innerWidth < 768) {
-        pageSize = { width: '210mm', height: '297mm' }; // Custom page size for mobile
-        scale = 0.7; // Adjust scale for mobile devices
-      }
+  // Check if the screen width is less than a certain threshold (e.g., 768px for tablets)
+  if (window.innerWidth < 768) {
+    pageSize = { width: '210mm', height: '297mm' }; // Custom page size for mobile
+    scale = 0.7; // Adjust scale for mobile devices
+  }
 
-      // Define the options for html2pdf
-      var opt = {
-        margin: 0,
-        filename: 'RadekPadrtaCV.pdf',
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: scale }, // Adjusted scale for better mobile compatibility
-        jsPDF: { unit: 'in', format: pageSize, orientation: 'portrait' } // Custom page size for mobile
-      };
+  // Define the options for html2pdf
+  var opt = {
+    margin: 0,
+    filename: 'RadekPadrtaCV.pdf',
+    image: { type: 'jpeg', quality: 0.98 },
+    html2canvas: { scale: scale }, // Adjusted scale for better mobile compatibility
+    jsPDF: { unit: 'in', format: pageSize, orientation: 'portrait' } // Custom page size for mobile
+  };
 
-      // Generate the PDF
-      html2pdf().set(opt).from(element).save().then(function () {
-        // Show the button and restore the border
-        button.style.display = 'block';
-        element.style.border = '1px solid #ccc'; // Restore the border
+  // Generate the PDF
+  html2pdf().set(opt).from(element).save().then(function () {
+    // Show the button and restore the border
+    button.style.display = 'block';
+    element.style.border = '1px solid #ccc'; // Restore the border
 
-        // Restore the .url.row.end section to original styles
-        if (urlRowEnd) {
-          urlRowEnd.style.display = urlRowEndDisplayStyle; // Restore display property
-          urlRowEnd.style.justifyContent = urlRowEndJustifyContent; // Restore justify-content property
-        }
-      });
+    // Restore the .url.row.end section to original styles
+    if (urlRowEnd) {
+      urlRowEnd.style.display = urlRowEndDisplayStyle; // Restore display property
+      urlRowEnd.style.justifyContent = urlRowEndJustifyContent; // Restore justify-content property
     }
+  });
+}
   </script>
-
+  
 
 
 

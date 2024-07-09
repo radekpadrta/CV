@@ -300,6 +300,14 @@ section ._text-dim {
     padding-top: 7px;
 }
 
+@media only screen and (max-width: 600px) {
+    /* Mobile-specific style for page break */
+    .page-break-phone {
+        page-break-before: auto; /* or avoid, depending on your needs */
+        padding-top: 3px; /* Adjust padding for smaller devices */
+    }
+}
+
 @media print {
     footer.footer .footer-content .footer-button {
         display: none !important;
