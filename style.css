@@ -332,3 +332,10 @@ section ._text-dim {
     display: flex;
     justify-content: center; /* Center items horizontally */
   }  
+
+  .summary.p {
+    font-size: 15px; /* Adjust as needed */
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+
+  }
