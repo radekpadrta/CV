@@ -79,8 +79,8 @@ body.dark-theme .cv-container {
 
 .theme-switcher {
     position: fixed;
-    top: 20px;
-    right: 20px;
+    top: 25px;
+    right: 25px;
     cursor: pointer;
     z-index: 1000; /* Ensure it is on top of other elements */
 }
