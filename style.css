@@ -61,6 +61,7 @@ body.dark-theme .theme-container {
 }
 
 .cv-container {
+    position: relative;
     font-size: 14px;
     font-family: system-ui, sans-serif;
     width: 100%;
@@ -78,17 +79,17 @@ body.dark-theme .cv-container {
 }
 
 .theme-switcher {
-    position: fixed;
+    position: absolute;
     top: 25px;
     right: 25px;
     cursor: pointer;
-    z-index: 1000; /* Ensure it is on top of other elements */
+    z-index: 1000;
 }
 
 @media (max-width: 600px) {
     .theme-switcher {
-        top: 25px;
-        right: 25px;
+        top: 13px;
+        right: 13px;
         position: absolute;
     }
 }
