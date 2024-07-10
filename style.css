@@ -85,6 +85,14 @@ body.dark-theme .cv-container {
     z-index: 1000; /* Ensure it is on top of other elements */
 }
 
+@media (max-width: 600px) {
+    .theme-switcher {
+        top: 25px;
+        right: 25px;
+        position: absolute;
+    }
+}
+
 #sun {
     display: none;
 }
