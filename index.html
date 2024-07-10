@@ -414,74 +414,71 @@
 
   <script>
     function downloadPDF() {
-        // Check if the screen width is less than or equal to 600px (mobile devices)
-        if (window.innerWidth <= 600) {
-            // Open the PDF directly for mobile users
-            window.open('RadekPadrta_CV.pdf', '_blank');
-        } else {
-            // For desktop users, proceed with generating the PDF
-            var element = document.getElementById('cv-container');
-            var button = document.querySelector('.footer-button');
-            var urlRowEnd = document.querySelector('.url.row.end');
-            var themeSwitcher = document.querySelector('.theme-switcher');
+    // Check if the screen width is less than or equal to 600px (mobile devices)
+    if (window.innerWidth <= 600) {
+        // Open the PDF directly for mobile users
+        window.open('RadekPadrta_CV.pdf', '_blank');
+    } else {
+        var element = document.getElementById('cv-container');
+        var button = document.querySelector('.footer-button');
+        var urlRowEnd = document.querySelector('.url.row.end');
+        var themeSwitcher = document.querySelector('.theme-switcher');
 
-            // Capture original styles
-            var urlRowEndDisplayStyle = urlRowEnd ? urlRowEnd.style.display : null;
-            var urlRowEndJustifyContent = urlRowEnd ? urlRowEnd.style.justifyContent : null;
-            var themeSwitcherDisplayStyle = themeSwitcher ? themeSwitcher.style.display : null;
+        // Capture current theme class
+        var isDarkTheme = document.body.classList.contains('dark-theme');
 
-            // Hide the button and border
-            button.style.display = 'none';
-            element.style.border = 'none';
-
-            // Hide the .url.row.end section if it exists
-            if (urlRowEnd) {
-                urlRowEnd.style.display = 'none';
-            }
-
-            // Hide the theme-switcher if it exists
-            if (themeSwitcher) {
-                themeSwitcher.style.display = 'none';
-            }
-
-            // Define page size and scale based on device width
-            var pageSize = 'A4'; // Default page size for desktop
-            var scale = 1; // Default scale for desktop
-
-            // Check if the screen width is less than a certain threshold (e.g., 768px for tablets)
-            if (window.innerWidth < 768) {
-                pageSize = { width: '210mm', height: '297mm' }; // Custom page size for mobile
-                scale = 0.7; // Adjust scale for mobile devices
-            }
-
-            // Define the options for html2pdf
-            var opt = {
-                margin: 0,
-                filename: 'RadekPadrtaCV.pdf',
-                image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { scale: scale }, // Adjusted scale for better mobile compatibility
-                jsPDF: { unit: 'in', format: pageSize, orientation: 'portrait' } // Custom page size for mobile
-            };
-
-            // Generate the PDF
-            html2pdf().set(opt).from(element).save().then(function () {
-                // Show the button and restore the border
-                button.style.display = 'block';
-                element.style.border = '1px solid #ccc'; // Restore the border
-
-                // Restore the .url.row.end section to original styles
-                if (urlRowEnd) {
-                    urlRowEnd.style.display = urlRowEndDisplayStyle; // Restore display property
-                    urlRowEnd.style.justifyContent = urlRowEndJustifyContent; // Restore justify-content property
-                }
-
-                // Restore the theme-switcher to original style
-                if (themeSwitcher) {
-                    themeSwitcher.style.display = themeSwitcherDisplayStyle;
-                }
-            });
+        // Temporarily remove dark theme for PDF generation
+        if (isDarkTheme) {
+            document.body.classList.remove('dark-theme');
         }
+
+        // Hide elements not to be included in PDF
+        button.style.display = 'none';
+        element.style.border = 'none';
+        if (urlRowEnd) {
+            urlRowEnd.style.display = 'none';
+        }
+        if (themeSwitcher) {
+            themeSwitcher.style.display = 'none';
+        }
+
+        var pageSize = 'A4'; // Default page size for desktop
+        var scale = 1; // Default scale for desktop
+
+        // Adjust settings for mobile devices
+        if (window.innerWidth < 768) {
+            pageSize = { width: '210mm', height: '297mm' }; // Custom page size for mobile
+            scale = 0.7; // Adjust scale for mobile devices
+        }
+
+        var opt = {
+            margin: 0,
+            filename: 'RadekPadrtaCV.pdf',
+            image: { type: 'jpeg', quality: 0.98 },
+            html2canvas: { scale: scale },
+            jsPDF: { unit: 'in', format: pageSize, orientation: 'portrait' }
+        };
+
+        // Generate the PDF
+        html2pdf().set(opt).from(element).save().then(function () {
+            // Restore elements and original theme after PDF generation
+            button.style.display = 'block';
+            element.style.border = '1px solid #ccc';
+
+            if (urlRowEnd) {
+                urlRowEnd.style.display = '';
+            }
+            if (themeSwitcher) {
+                themeSwitcher.style.display = '';
+            }
+
+            // Restore dark theme if it was originally applied
+            if (isDarkTheme) {
+                document.body.classList.add('dark-theme');
+            }
+        });
     }
+}
 </script>
   <script src="script.js"></script>
 
